@@ -60,14 +60,4 @@ public class ArraysExercises {
 //        return addPerson();
     }
 }
-<<<<<<< HEAD
-
-
-
-
-
-
-
-=======
-//comment
->>>>>>> f81f956b14a02e1f31d05fba9264859ac6507878
+//comment 2
