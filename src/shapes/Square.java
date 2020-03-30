@@ -16,15 +16,18 @@ a square*/
 
 package shapes;
 
-public class Square {
+public class Square extends Rectangle {
 
-    public static void main(String[] args) {
-        Rectangle rec = new Rectangle();
-        rec.getArea();
-        rec.getPerimeter();
+    private int side;
+    public Square (int squSize){
+        super();
+        side = squSize;
+        length = side;
+        width = side;
+    }
 
-        System.out.println("\nThe area of the rectangle is: " + rec.getArea() + "ft");
-        System.out.println("\nThe perimeter of the rectangle is: " + rec.getPerimeter() + "ft");
-
+    public int Sides(){
+        int area = side * side;
+        return area;
     }
 }
