@@ -18,8 +18,8 @@ public class Rectangle {
 
     //This is a constructor
     public Rectangle (int newLength, int newWidth){
-        length = newLength;
-        width = newWidth;
+        this.length = newLength;
+        this.width = newWidth;
     }
 
     //This is a method
