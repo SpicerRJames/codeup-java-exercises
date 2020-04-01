@@ -47,7 +47,17 @@ public class ShapesTest {
         box1.getPerimeter();
 //
         System.out.println("\nThe area of the rectangle is: " + myShape.getArea() + "ft");
-//        System.out.println("\nThe perimeter of the rectangle is: " + box1.getPerimeter() + "ft");
+        System.out.println("\nThe perimeter of the rectangle is: " + myShape.getPerimeter() + "ft");
+
+
+        Square box2 = new Square(8);
+        myShape = box2;
+        box2.getArea();
+        box2.getPerimeter();
+        System.out.println("\nThe area of the rectangle is: " + myShape.getArea() + "ft");
+        System.out.println("\nThe perimeter of the rectangle is: " + myShape.getPerimeter() + "ft");
+
+//
 //
 //        Rectangle box2 = new Rectangle(5, 7);
 //        System.out.println("\nThe area of the square is: " + box2.getArea() + "ft");
