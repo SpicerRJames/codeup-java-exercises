@@ -17,15 +17,17 @@ Create another class named InputTest that has a static main method that uses all
 */
 
 package util;
+import javax.naming.NamingEnumeration;
 import java.util.Scanner;
 
 public class Input {
+
+    private Scanner scanner;
 
     public Input(){
         scanner = new Scanner(System.in);
     }
 
-    private Scanner scanner;
 
     String getString(){
         System.out.println("Enter a quote");
@@ -33,22 +35,19 @@ public class Input {
         return in;
     }
 
-    boolean yesNo(){
+    boolean yesNo() {
         System.out.println("Enter y for true");
         String in = scanner.next();
         return in.equalsIgnoreCase("y");
 
     }
 
-//    int getInt(int min, int max){
-//        min = 10;
-//        max = 100;
-//        int in = scanner.nextInt();
-//        if(in > 100){
-//            System.out.println("Number is over the max");
-//        }
-//        return getInt();
-//    }
+    public int getInt (int min, int max){
+        System.out.println("Enter one number");
+
+
+    }
+
 //    double getDouble(double min, double max){
 //        return getInt();
 //    }
@@ -60,6 +59,7 @@ public class Input {
         Input in = new Input();
         System.out.println(in.yesNo());
         System.out.println(in.getString());
+        System.out.println(in.getInt(0, 0));
     }
 
 }
