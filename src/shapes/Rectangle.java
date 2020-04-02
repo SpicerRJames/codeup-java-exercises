@@ -11,27 +11,46 @@ area = length x width*/
 
 package shapes;
 
-public class Rectangle {
-    protected int length;
-    protected int width;
+public class Rectangle extends Quadrilateral implements Measurable{
 
+    public Rectangle(double length, double width) {
+        super(length, width);
+    }
 
+//    public Rectangle(Measurable myShape) {
+//        super(myShape);
+//    }
+
+    @Override
+    public void setLength() {
+
+    }
+
+    @Override
+    public void setWidth() {
+
+    }
+
+//    protected int length;
+//    protected int width;
+//
+//
     //This is a constructor
-    public Rectangle (int newLength, int newWidth){
-        this.length = newLength;
-        this.width = newWidth;
-    }
-
-    //This is a method
-    public int getArea() {
-        int area = length * width;
-        return area;
-    }
-
-    //This is also a method
-    public int getPerimeter() {
-        int perimeter = (2 * length) + (2 * width);
-        return perimeter;
-    }
+//    public Rectangle (int newLength, int newWidth){
+//        this.length = newLength;
+//        this.width = newWidth;
+//    }
+//
+//    //This is a method
+//    public int getArea() {
+//        int area = length * width;
+//        return area;
+//    }
+//
+//    //This is also a method
+//    public int getPerimeter() {
+//        int perimeter = (2 * length) + (2 * width);
+//        return perimeter;
+//    }
 
 }

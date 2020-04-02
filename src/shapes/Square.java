@@ -7,13 +7,25 @@ the main method,*/
 
 package shapes;
 
-public class Square extends Rectangle {
+public class Square extends Quadrilateral {
 
 //    private int side;
     public Square (int squSize){
         super(squSize, squSize);
 //        side = squSize;
     }
+
+    @Override
+    public void setLength() {
+        System.out.println("Square setLength");
+    }
+
+    @Override
+    public void setWidth() {
+        System.out.println("Square setWidth");
+    }
+
+
 
 //    public int sides(){
 //        int area = side * side;
