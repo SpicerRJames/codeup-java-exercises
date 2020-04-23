@@ -17,49 +17,111 @@ Create another class named InputTest that has a static main method that uses all
 */
 
 package util;
-import javax.naming.NamingEnumeration;
 import java.util.Scanner;
 
 public class Input {
 
-    private Scanner scanner;
+    private static Scanner scanner;
 
     public Input(){
         scanner = new Scanner(System.in);
     }
 
 
-    String getString(){
-        System.out.println("Enter a quote");
-        String in = scanner.next();
-        return in;
+    static String getString(String prompt) throws Exception{
+        //if there is no scanner set
+        if(scanner == null){
+            throw new Exception("Scanner is not set");
+        }
+
+//        System.out.println("Enter a quote");
+//        String in = scanner.next();
+
+        //if there is a scanner set
+        String inputString;
+        if(prompt != null){
+            System.out.println(prompt);
+        }
+        inputString = scanner.nextLine();
+        return inputString;
     }
 
-    boolean yesNo() {
-        System.out.println("Enter y for true");
-        String in = scanner.next();
-        return in.equalsIgnoreCase("y");
+    public static String getString() throws Exception{
+        return getString(null);
+    }
 
+//    boolean yesNo() {
+//        System.out.println("Enter y for true");
+//        String in = scanner.next();
+//        return in.equalsIgnoreCase("y");
+//
+//    }
+
+    public static boolean yesNo(String prompt) throws Exception{
+        if(scanner == null){
+            throw new Exception("Input not set for yesNo");
+        }
+        boolean response;
+        if(prompt != null){
+            System.out.println("pres y for yes");
+        } else {
+            System.out.println("you did not press y");
+        }
+        response = scanner.nextLine().toLowerCase().contains("y");
+        return response;
     }
 
     public int getInt (int min, int max){
         System.out.println("Enter one number");
+        min = 10;
+        max = 100;
+        int num = scanner.nextInt();
 
-
+        if (num <= max || num >= min){
+            System.out.print("%int is in rage");
+        } else {
+            System.out.println("Number not in range");
+        }
+        return num;
     }
 
-//    double getDouble(double min, double max){
-//        return getInt();
-//    }
-//    double getDouble(){
-//        return getDouble();
-//    }
+    int getInt(){
+        return getInt();
+    }
 
-    public static void main(String[] args){
+    double getDouble(double min, double max){
+        System.out.println("Enter one number");
+        min = 10;
+        max = 100;
+        int num = scanner.nextInt();
+
+        if (num <= max || num >= min){
+            System.out.print("%int is in rage");
+        } else {
+            System.out.println("Number not in range");
+        }
+        return num;
+    }
+
+    double getDouble(){
+        return getDouble();
+    }
+
+    public static void main(String[] args) throws Exception {
+        Scanner scanner = new Scanner(System.in);
         Input in = new Input();
-        System.out.println(in.yesNo());
-        System.out.println(in.getString());
+//        System.out.println(in.getString());
         System.out.println(in.getInt(0, 0));
+
+        String quote = Input.getString("What is your favorite quote");
+        System.out.println(quote);
+
+        boolean containsY = Input.yesNo("Press y");
+        if(containsY){
+            System.out.println("you did it");
+        } else {
+            System.out.println("you did not");
+        }
     }
 
 }
